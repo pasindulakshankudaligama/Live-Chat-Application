@@ -11,13 +11,13 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
 
-public class ClientAppInitializer extends Application {
+public class ServerAppInitializer extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        URL resource = getClass().getResource("view/LoginForm.fxml");
+        URL resource = getClass().getResource("view/ServerForm.fxml");
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
         primaryStage.initStyle(StageStyle.TRANSPARENT); //Use For Boarder TRANSPARENT
@@ -38,13 +38,12 @@ public class ClientAppInitializer extends Application {
             }
         });
 
-        primaryStage.setMinWidth(600);
+        primaryStage.setMinWidth(458);
         primaryStage.setMinHeight(769);
         primaryStage.setMaxWidth(458);
         primaryStage.setMaxHeight(769);
         primaryStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
-
     }
 }
